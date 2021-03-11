@@ -1,0 +1,127 @@
+<!DOCTPE html>
+<html>
+    <head>
+        <title>localStorage</title> 
+        <meta charse="UTF-8"/>
+        <meta name="viewport"content="wdith=device-width, initial-scale=1, user-scalable=no"/>
+        <meta name="Hamzalistic2020" content="how to save data in localstorage,">
+       
+    <style>
+        body{background-color:rgb(0, 0, 0);
+             margin:0px;
+             padding:0px;
+             color:white;
+             font-family:Arial, Helvetica, sans-serif;}
+             fieldset{width:80%;
+                      height:auto;
+                      margin:auto;
+                      padding:20px;
+                      margin-top:20px;
+                      box-shadow:5px 5px 15px #bbb;}
+
+             .output{width:80%;
+                      height:auto;
+                      margin:auto;
+                      padding:20px;
+                      margin-top:10px;}
+            input{height:30px; width:60%;
+                 text-align:center;
+                 margin:0 auto;
+                 margin-left:50px;
+                 }
+            header{background-color:rgb(3, 70, 66);
+                 width:100%;
+                 height:50px;
+                 text-align:center;
+                  margin:0px;
+                  padding:0px;}
+                  h3 {padding:10px;}
+            label{text-align:center; margin-left:50px; margin-bottom:10px;}
+    </style>
+</head>
+<body>
+ <header>
+     <h3 id="message">MIBS TECH LOCALSTORAGE APP</h3>
+ </header>
+ <fieldset id="one">
+     <legend>ADD FREIENDS</legend>
+     <input type="text" id="inpkey" placeholder="Enter Name"/><br><label>Name</label><br>
+  <input type="text" id="inpvalue" placeholder="Enter State"/><br><label>State</label><br>
+     <input type="button" id="btn" value="Submit" style="width:20%;background-color:red; border:none; color:white; border-radius:20px; box-shadow:3px 5px 15px #bbb;"/>
+     <input type="button" id="btn" onclick="reset()" value="Reset" style="width:20%;background-color:rgb(26, 78, 71); border:none; color:white; border-radius:20px;box-shadow:3px 5px 15px #bbb;"/>
+ </fieldset>
+
+ <fieldset class="output" id="two">
+    <legend>STORAGE</legend>
+    <div id="output"></div>
+</fieldset>
+<script>
+ const a = document.getElementById("inpkey");
+ const b = document.getElementById("inpvalue");
+ const c = document.getElementById("btn");
+  const d = document.getElementById("output");
+
+
+
+ c.onclick = function(){
+  const key = a.value;
+  const value = b.value;
+  
+  if(key && value){
+      localStorage.setItem(key, value);
+      location.reload();
+  }
+ };
+
+
+ for (let i = 0; i<localStorage.length; i++){
+     const key = localStorage.key(i);
+     const value =localStorage.getItem(key);
+     d.innerHTML +=key.toUpperCase()+  " ______" +value.toUpperCase() +" <br/>";
+ }
+
+ function reset(){
+
+ localStorage.clear();
+ location.reload();
+        
+}
+
+var msg2 =setInterval(mytimer2, 6000);
+function mytimer2(){
+var abs ="I WISH YOU HAPPY NEW YEAR SUCCESS IN 2021.";
+document.getElementById("message").style.color="red";
+document.getElementById("one").style.borderColor="red";
+document.getElementById("two").style.borderColor="red";
+document.getElementById("message").innerHTML=abs;
+}
+var msg3 =setInterval(mytimer3, 12000);
+function mytimer3(){
+var ab ="MR ISAAC (CEO MIBS TECH).";
+document.getElementById("message").style.color="yellow";
+document.getElementById("one").style.borderColor="yellow";
+document.getElementById("two").style.borderColor="yellow";
+document.getElementById("message").innerHTML=ab;
+}
+
+var msg4 =setInterval(mytimer4, 18000);
+function mytimer4(){
+var abc ="MR AUSTINE (CHEIF ARCHITECT).";
+document.getElementById("message").style.color="cyan";
+document.getElementById("one").style.borderColor="cyan";
+document.getElementById("two").style.borderColor="cyan";
+document.getElementById("message").innerHTML=abc;
+}
+var msg5 =setInterval(mytimer5, 24000);
+function mytimer5(){
+var abd ="BRO.HABIB (CHIEF OF BOOTSTRAP).";
+document.getElementById("message").style.color="violet";
+document.getElementById("one").style.borderColor="violet";
+document.getElementById("two").style.borderColor="violet";
+document.getElementById("message").innerHTML=abd;
+}
+
+</script>
+ 
+</body>
+</html>
